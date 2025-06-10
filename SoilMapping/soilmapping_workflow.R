@@ -7,8 +7,9 @@
 # setwd("/Users/dietrich/Documents/GitHub/substack_demos/SoilMapping/") <- my directory path
 # setwd("[Path/to/Directory]/substack_demos/SoilMapping/")
 
-# set t1 for workflow time benchmark
-t1 <- Sys.time()
+# install libraries
+packages <- c("raster", "stars", "sf", "soilDB", "leaflet", "elevatr")
+install.packages(setdiff(packages, rownames(installed.packages()))) 
 
 # load libraries
 
@@ -18,6 +19,9 @@ library(sf)
 library(soilDB)
 library(leaflet)
 library(elevatr)
+
+# set t1 for workflow time benchmark
+t1 <- Sys.time()
 
 # pull raster layer from SOLUS100
 # depth sclices in this case is only 0-5cm
